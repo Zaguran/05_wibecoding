@@ -4,3 +4,19 @@ Python skript pro LLM API
  Napiš Python skript, který zavolá LLM API, použije nástroj (např. výpočetní funkci) a vrátí odpověď zpět LLM.
 
 
+rozšíření:
+
+krok 1.
+připojit se k ollame model llama3.1:8b
+zjistit prvních 30 prvočísel
+
+krok 2
+výsledek poslat do modelu qwen2.5-coder:14b
+a zeptat se jestli uvedená čísla jsou prvočísla
+
+krok 3
+komunikaci - co se poslalo a co přišlo monitorovat do logu, at vím že kód skutečně funguje
+
+
+
+
