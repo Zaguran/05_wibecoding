@@ -1,0 +1,29 @@
+2026-04-10 13:05:42,913 [INFO] Spuštěn skript lekce_1.py | OLLAMA_URL=http://localhost:11434
+2026-04-10 13:05:42,914 [INFO] ============================================================
+2026-04-10 13:05:42,914 [INFO] KROK 1 — Model: llama3.1:8b
+2026-04-10 13:05:42,914 [INFO] Odesláno uživatelem: Pomocí nástroje get_first_n_primes zjisti prvních 30 prvočísel.
+2026-04-10 13:05:46,462 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-10 13:05:46,463 [INFO] Odpověď modelu (raw): {"model":"llama3.1:8b","created_at":"2026-04-10T11:05:46.461764922Z","done":true,"done_reason":"stop","total_duration":3545472129,"load_duration":194330564,"prompt_eval_count":193,"prompt_eval_duration":176696851,"eval_count":20,"eval_duration":3146500054,"message":{"role":"assistant","content":"","thinking":null,"images":null,"tool_name":null,"tool_calls":[{"function":{"name":"get_first_n_primes","arguments":{"n":30}}}]},"logprobs":null}
+2026-04-10 13:05:46,463 [INFO] Model volá nástroj: get_first_n_primes(n=30)
+2026-04-10 13:05:46,463 [INFO] Výsledek nástroje: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]
+2026-04-10 13:06:30,712 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-10 13:06:30,712 [INFO] Finální odpověď llama3.1:8b: Tato funkce vrátí první 30 prvočísel. Pomocí nástroje get_first_n_primes si můžete vypočítat prvních 30 prvočísel.
+
+Během výpočtu se používají následující kroky:
+
+1. Začíná od prvního prvočísla, které je 2.
+2. Zkontroluje, zda číslo je prvočíslom (tj., zda není dělitelné žádným jiným číslem než 1 a samotným číslem). Pokud je, vrátí si ho jako následující prvočíslo.
+
+Pro každý další požadovaný prvovýsledek se provádějí kroky:
+
+1. Začíná od posledního prvočísla, které bylo zjištěno.
+2. Zkontroluje každé celé číslo větším než poslední znalecký počet, zda je prvovýsledek (tj., zda není dělitelné žádným jiným číslem než 1 a samotným číslem). Pokud ano, vrátí si ho jako další prvočíslo.
+
+Tento proces se opakuje, dokud nebudou nalezena požadovaná 30 prvočísla.
+2026-04-10 13:06:30,712 [INFO] ============================================================
+2026-04-10 13:06:30,712 [INFO] KROK 2 — Model: qwen2.5-coder:14b
+2026-04-10 13:06:30,712 [INFO] Odesláno uživatelem: Jsou tato čísla prvočísla? Ověř každé z nich a odpověz stručně: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]
+2026-04-10 13:07:13,469 [INFO] HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-04-10 13:07:13,469 [INFO] Odpověď qwen2.5-coder:14b: Všechna uvedená čísla jsou prvočísla. Prvočíslo je přirozené číslo větší než jedna, které má přesně dva různé dělitele: jedničku a samotné sebe.
+2026-04-10 13:07:13,470 [INFO] ============================================================
+2026-04-10 13:07:13,470 [INFO] HOTOVO — log uložen do lekce_1.log

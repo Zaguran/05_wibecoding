@@ -73,7 +73,7 @@ python lekce_1.py
 
 ## Log
 
-Po spuštění se ve složce `Ukoly/Lekce_1/` vytvoří soubor **[lekce_1.log](lekce_1.log)** s kompletním záznamem komunikace:
+Po spuštění se ve složce `Ukoly/Lekce_1/` vytvoří soubor `lekce_1.log` s kompletním záznamem komunikace. Výsledek úspěšného běhu je uložen v **[result.txt](result.txt)**.
 
 - co bylo odesláno každému modelu
 - jaké nástroje model zavolal a s jakými argumenty
