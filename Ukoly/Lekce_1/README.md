@@ -58,6 +58,8 @@ Skript načítá nastavení ze souboru `.env` ve stejné složce:
 
 ```env
 OLLAMA_URL=http://localhost:11434
+MODEL_1=llama3.1:8b
+MODEL_2=qwen2.5-coder:14b
 ```
 
 ---

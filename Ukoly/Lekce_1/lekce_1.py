@@ -20,8 +20,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-MODEL_1 = "llama3.1:8b"
-MODEL_2 = "qwen2.5-coder:14b"
+MODEL_1 = os.getenv("MODEL_1", "llama3.1:8b")
+MODEL_2 = os.getenv("MODEL_2", "qwen2.5-coder:14b")
 LOG_FILE = "lekce_1.log"
 
 logging.basicConfig(
