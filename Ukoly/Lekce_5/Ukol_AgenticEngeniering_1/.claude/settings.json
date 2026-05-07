@@ -1,0 +1,78 @@
+{
+  "mcpServers": {
+    "google-drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "description": "Čtení a zápis souborů na Google Drive (sdílení výsledků, načítání podkladů)"
+    },
+    "gmail": {
+      "type": "http",
+      "url": "https://gmailmcp.googleapis.com/mcp/v1",
+      "description": "Odesílání reportů e-mailem po dokončení analýzy"
+    },
+    "google-calendar": {
+      "type": "http",
+      "url": "https://calendarmcp.googleapis.com/mcp/v1",
+      "description": "Plánování opakovaných code-review úkolů"
+    },
+    "fetch": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "description": "Stahování webových stránek a dokumentace (např. PyPI, GitHub README)"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/root/projects"],
+      "description": "Přístup k souborovému systému projektu — čtení/zápis souborů"
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(pip *)",
+      "Bash(uv *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[HOOK] Bash spuštěn: $(date)\" >> /tmp/claude_activity.log"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[HOOK] Claude session ukončena: $(date)\" >> /tmp/claude_activity.log"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "ANTHROPIC_MODEL": "claude-sonnet-4-6",
+    "LOG_LEVEL": "INFO"
+  }
+}
