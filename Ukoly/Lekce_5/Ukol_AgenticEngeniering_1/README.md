@@ -79,10 +79,20 @@ Stav fronty je průběžně ukládán do SQLite (`todo.db`) přes `todo_store.py
 
 ---
 
+## Konfigurace Claude Code agenta
+
+Soubor `.claude/settings.json` konfiguruje chování Claude Code v tomto projektu:
+
+- **MCP servery** — Google Drive, Gmail, Google Calendar (HTTP), fetch pro stahování dokumentace, filesystem pro přístup k souborům
+- **Permissions** — povolené příkazy (`git`, `python3`, `find`, `grep`, …), zakázané destruktivní operace (`rm -rf`, `git push --force`)
+- **Hooks** — `PostToolUse(Bash)` loguje každé spuštění příkazu, `Stop` zaznamená ukončení session
+
 ## Struktura projektu
 
 ```
 Ukol_AgenticEngeniering_1/
+├── .claude/
+│   └── settings.json    # MCP servery, permissions, hooky pro Claude Code
 ├── agentic_loop.py      # Loop pattern — dynamická fronta s tool use
 ├── subagent_demo.py     # Sekvenční + paralelní workflow
 ├── main.py              # TODO CLI (argparse): add / list / done / delete / notify
