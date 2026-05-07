@@ -1,0 +1,11 @@
+📍 Nasdílejte nastavení Vašeho kódovacího agenta, využijte MCP Servery, Skilly, Subagenty.
+NEPOUŽÍVEJTE PLUGINS ANI MARKETPLACE!
+
+Kódovací agenti:
+
+Codex
+Claude Code
+
+
+📄 Formát: Vypracovaný úkol odevzdejte ve formě souborů, ideálně nahraných na Github. 
+Můžete nahrát buď zip adresářové struktury projektu, nebo link na Github.
